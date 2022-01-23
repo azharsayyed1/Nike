@@ -283,11 +283,11 @@ function showdata(data){
         div.addEventListener("click",function(event){
             var obj = {
                 
-                      productimage:prodimage,
-                      productname:prodname,
-                      productcat:prodcat,
-                      proddes:porddes,
-                      productprice:prodprice
+                      imageprod:prodimage,
+                      titleprod:prodname,
+                      catprod:prodcat,
+                      desprod:porddes,
+                      priceprod:prodprice
 
             };
 
@@ -295,7 +295,7 @@ function showdata(data){
 
             console.log(obj);
             localStorage.setItem("product",JSON.stringify(obj))
-            window.location.href = "productshow.html"
+            window.location.href = "product_show.html"
         });
         var image = document.createElement("img");
         image.src = prodimage;
