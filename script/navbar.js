@@ -26,14 +26,6 @@ function link_pages()
     {
         window.location.href = "/Pages/sneakersfeed.html"
     })
-//     document.querySelector("#men_page_nav_bar").addEventListener("click",()=>
-//     {
-        
-//     })
-//     document.querySelector("#men_page_nav_bar").addEventListener("click",()=>
-//     {
-        
-//     })
 }
 
 
