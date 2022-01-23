@@ -128,3 +128,48 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 #show_total_amount_to_pay{
     color: rgb(255, 30, 0);
 }
+
+@media only screen and (min-width: 415px) and (max-width: 820px){
+    #checkot_main_container_div{
+        width: 80%;
+        margin: auto;
+        display: block;
+        gap: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #checkout_main_proccess_div{
+        width: 90%;
+        border: 1px solid transparent;
+    }
+
+    #checkout_main_amount_div{
+        width: 50%;
+        border: 1px solid transparent;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 414px){
+    #checkot_main_container_div{
+        width: 100%;
+        margin: auto;
+        display: block;
+        gap: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #checkout_main_proccess_div{
+        width: 100%;
+        border: 1px solid transparent;
+        padding-bottom: 10px;
+        border-bottom: 3px solid red;
+    }
+
+    #checkout_main_amount_div{
+        width: 100%;
+        border: 1px solid transparent;
+        height: 300px;
+        margin-top: 0px;
+    }
+}
