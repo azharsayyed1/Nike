@@ -34,7 +34,7 @@
                  <div id="center_phone">
                  </div>
                  <div class="center">
-                    <p id="men_page_nav_bar">Men</p>
+                    <p onclick="Menpage()" id="men_page_nav_bar">Men</p>
                     <p id="women_page_nav_bar">Women</p>
                     <p id="kid_page_nav_bar">Kids</p>
                     <p id="customize_page_nav_bar">Customize</p>
@@ -314,7 +314,14 @@ function fiter_data(){
         }, 1000);
     }
 
-
+// function Menpage(){
+//     window.location.href = "men.html"
+// }
+ var men = document.getElementById("men_page_nav_bar").addEventListener("click",Menpage)
+ function Menpage(){
+     window.location.href = "men.html"
+ }
+ 
 
 
 
