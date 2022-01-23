@@ -1,3 +1,43 @@
+link_pages()
+
+function link_pages()
+{
+    document.querySelector("#men_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/men.html"
+    })
+    document.querySelector("#women_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/women.html"
+    })
+    document.querySelector("#kid_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/kids.html"
+    })
+    document.querySelector("#customize_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/customize.html"
+    })
+    document.querySelector("#sale_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/sales.html"
+    })
+    document.querySelector("#snkrs_page_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/sneakersfeed.html"
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
 var phone = window.matchMedia("(max-width: 414px)");
     navbar(phone);
     phone.addListener(navbar);
@@ -33,7 +73,7 @@ var phone = window.matchMedia("(max-width: 414px)");
 
             var op7 = document.createElement("option");
                 op7.text = "Customise";
-
+    
             var op8 = document.createElement("option");
                 op8.text = "Sales";
 
@@ -50,9 +90,48 @@ var phone = window.matchMedia("(max-width: 414px)");
             sel.add(op8)
             sel.add(op9)
 
-                body.append(sel);
+            body.append(sel);
+
+            sel.addEventListener("change", () => {
+                
+                let sel_value = event.target.value
+                
+                if(sel_value == "Favorite")
+                {
+                    window.location.href = "/Pages/wishlist.html"
+                }
+                else if(sel_value == "Cart")
+                {
+                    window.location.href = "/Pages/cart.html"
+                }
+                else if(sel_value == "Men")
+                {
+                    window.location.href = "/Pages/men.html"
+                }
+                else if(sel_value == "Women")
+                {
+                    window.location.href = "/Pages/women.html"
+                }
+                else if(sel_value == "Kids")
+                {
+                    window.location.href = "/Pages/kids.html"
+                }
+                else if(sel_value == "Customise")
+                {
+                    window.location.href = "/Pages/customize.html"
+                }
+                else if(sel_value == "Sales")
+                {
+                    window.location.href = "/Pages/sales.html"
+                }
+                else if(sel_value == "SNKRS")
+                {
+                    window.location.href = "/Pages/sneakersfeed.html"
+                }
+            })
         }
         else{
             document.querySelector(".center").style.display = "flex";
         }
     }
+
