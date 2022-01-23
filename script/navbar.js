@@ -2,6 +2,16 @@ link_pages()
 
 function link_pages()
 {
+    document.querySelector("#join_us_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/join_us.html"
+    })
+    
+    document.querySelector("#sign_in_nav_bar").addEventListener("click",()=>
+    {
+        window.location.href = "/Pages/sign_in.html"
+    })
+
     document.querySelector("#men_page_nav_bar").addEventListener("click",()=>
     {
         window.location.href = "/Pages/men.html"
@@ -27,16 +37,6 @@ function link_pages()
         window.location.href = "/Pages/sneakersfeed.html"
     })
 }
-
-
-
-
-
-
-
-
-
-
 
 var phone = window.matchMedia("(max-width: 414px)");
     navbar(phone);
