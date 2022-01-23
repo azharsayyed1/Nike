@@ -19,9 +19,9 @@
 
     var userdata = JSON.parse(localStorage.getItem("user_order"));
 
-    var cart = map(Number(localStorage.getItem("totalamount")));
+    var cart = (localStorage.getItem("totalamount"));
 
-    var amount = cart;
+    var amount = +cart;
 
     var tax = Math.floor((amount*12)/100);
 
