@@ -13,7 +13,7 @@
 
     console.log(order_date, order_month,today_date.getFullYear());
 
-    document.querySelector("#you_will_recice_order_on").textContent = "Your Order Will Be delivered till :- "+(order_date+" "+order_month+" "+today_date.getFullYear());
+    document.querySelector("#you_will_recice_order_on").textContent = "Your Order Will Be delivered till :- "+(order_date+"/"+order_month+"/"+today_date.getFullYear());
 
 
 
@@ -77,7 +77,7 @@
 
             setTimeout(()=>{
                 payment.style.display = "none";
-                alert("Payment Recived...Order Placed.")
+                alert("Payment Received...Order Placed.")
                 order.style.display = "block";
             },3000);
         }
