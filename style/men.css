@@ -72,6 +72,7 @@ h1{
 
 #trending{
     /* border: 1px solid red; */
+
     height: 600px;
     width: 95%;
     margin: auto;
@@ -90,6 +91,7 @@ h1{
     margin-left: 1%;
      
 }
+
 .title{
     /* border: 1px solid red; */
     display: flex;

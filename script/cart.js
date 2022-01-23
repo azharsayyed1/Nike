@@ -62,6 +62,7 @@ const displaycart = (temparr)=>{
   }
 
 
+
   displaycart (temparr)
 // this function is for removing items from the cart
 function removeitem(index){

@@ -57,7 +57,7 @@ body{
     margin-right: 10%;
 
 }
-@media screen and (min-width: 0px) and (max-width: 400px) {
+@media screen and (min-width: 0px) and (max-width: 414px) {
     #men_shoes_container{
         display: grid;
         grid-template-columns: repeat(1,100%);
@@ -117,7 +117,7 @@ body{
 
 }
 
-@media screen and (min-width: 376px) and (max-width: 700px) {
+@media screen and (min-width: 415px) and (max-width: 820px){
     #men_cloth_container{
         display: grid;
         grid-template-columns: repeat(2,100%);
