@@ -1,9 +1,9 @@
 #men_shoes_container{
     display: grid;
-    grid-template-columns: repeat(3,25%);
-    grid-gap: 3%;
+    grid-template-columns: repeat(3,30%);
+    grid-gap: 10px;
     /* border: 1px solid red; */
-    width: 100%;
+    width: 90%;
     margin-left: 10%;
     margin-top: 3%;
     
@@ -25,10 +25,10 @@ body{
 }
 #men_cloth_container{
     display: grid;
-    grid-template-columns: repeat(3,25%);
-    grid-gap: 3%;
+    grid-template-columns: repeat(3,30%);
+    grid-gap: 10px;
     /* border: 1px solid red; */
-    width: 100%;
+    width: 90%;
     margin-left: 10%;
     margin-top: 3%;
     
@@ -37,6 +37,7 @@ body{
     cursor: pointer;
     /* border: 1px solid red; */
     align-items: center;
+    /* margin-right: 10%; */
 }
 #men_wishlist_container{
     display: grid;
