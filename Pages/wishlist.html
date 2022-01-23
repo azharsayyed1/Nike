@@ -127,17 +127,17 @@ function showdata(wishlist){
         div.addEventListener("click",function(event){
             var obj = {
                 
-                      productimage:prodimg,
-                      productname:prodtitle,
+                      imageprod:prodimg,
+                      titleprod:prodtitle,
                     //   productcat:prodcat,
-                      proddes:porddes,
-                      productprice:prodprice
+                      desprod:porddes,
+                      priceprod:prodprice
 
             };
 
             console.log(obj);
             localStorage.setItem("product",JSON.stringify(obj))
-            window.location.href = "productshow.html"
+            window.location.href = "product_show.html"
         });
         var image = document.createElement("img");
         image.src = prodimg;
