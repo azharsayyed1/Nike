@@ -52,18 +52,16 @@ const displaycart = (temparr)=>{
   
  })
 }
-var addedtotal = []
+
   const grand = (grandtotal) => {
   document.getElementById("subtotal").textContent = grandtotal-handling
   document.getElementById("grandtotal").textContent = grandtotal 
-  var obj = {
-    total : grandtotal
+  
+    localStorage.setItem("totalamount",grandtotal)
+  
   }
-  // displaycart(temparr);
-  addedtotal.push(obj)
-  localStorage.setItem("total",JSON.stringify(addedtotal));
- 
-  }
+
+
 
   displaycart (temparr)
 // this function is for removing items from the cart
@@ -72,7 +70,12 @@ function removeitem(index){
   temparr.splice(index,1)
   displaycart (temparr)  
   localStorage.setItem("cart",JSON.stringify(temparr))
-
+  
 }
 
-document.getElementById("checkoutbut").addEventListener("click", grand)
+document.getElementById("cart-checkout").addEventListener("click",toCheckOutPage)
+
+
+function toCheckOutPage(){
+  window.location.href = "/Pages/checkout.html"
+}
