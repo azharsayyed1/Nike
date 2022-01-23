@@ -19,12 +19,9 @@
 
     var userdata = JSON.parse(localStorage.getItem("user_order"));
 
-    var cart = JSON.parse(localStorage.getItem("cart"));
+    var cart = map(Number(localStorage.getItem("totalamount")));
 
-    var amount = 0;
-    cart.forEach(({prodprice})=>{
-        amount += (+prodprice);
-    });
+    var amount = cart;
 
     var tax = Math.floor((amount*12)/100);
 
@@ -36,8 +33,8 @@
     document.querySelector("#show_total_amount_to_pay").textContent = "₹ "+(tax+amount);
     document.querySelector("#show_order_user_total_amount").textContent = "₹ "+(tax+amount);
 
-    console.log("₹ "+amount);
-    console.log("tax "+Math.floor((amount*12)/100));
+    console.log("Cart Amount: "+amount);
+    console.log("tax: "+Math.floor((amount*12)/100));
     
 
     function addDetails(){
