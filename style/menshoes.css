@@ -87,10 +87,10 @@ body{
     #men_cloth_container{
         display: grid;
         grid-template-columns: repeat(1,100%);
-        grid-gap: 3%;
+        grid-gap: 10px;
         /* border: 1px solid red; */
         width: 100%;
-        margin-left: 10%;
+        margin-left: 10px;
         margin-top: 3%;
         
     }
@@ -98,6 +98,7 @@ body{
         cursor: pointer;
         /* border: 1px solid red; */
         align-items: center;
+        margin: 0;
     }
     #men_wishlist_container{
         display: grid;
@@ -120,10 +121,12 @@ body{
 
 @media screen and (min-width: 415px) and (max-width: 820px){
     #men_cloth_container{
+        display: grid;
         grid-template-columns: repeat(2,1fr);
         grid-gap: 10px;
+        /* border: 1px solid red; */
         width: 100%;
-        /* margin-left: 10%; */
+        margin-left: 20px;
         margin-top: 3%;
         
     }
@@ -136,6 +139,10 @@ body{
         margin-left: 20px;
         margin-top: 3%;
         
+    }
+
+    #men_shoes_container>div>img{
+        height: 350px;
     }
 
     #men_shoes_container>div>img{
