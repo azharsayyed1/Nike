@@ -26,10 +26,10 @@ function footer()
         <p>Sustainability</p>
     </div>
     <div id = "customise_footer_icon">
-        <a href="https://twitter.com/Nike"><img src="https://img.icons8.com/material/2x/twitter-squared.png"></a>
-        <a href="https://www.facebook.com/nike"><img src="https://cdn-icons.flaticon.com/png/512/3128/premium/3128208.png?token=exp=1642782321~hmac=b6c16c3c46cb17a94f8cd5d7277c914a"></a> 
-        <a href="https://www.youtube.com/user/nike"><img src="https://img.icons8.com/material/2x/youtube--v1.png"></a>
-        <a href="https://instagram.com/nike"><img src="https://img.icons8.com/windows/2x/instagram.png"></a>
+        <a href="https://twitter.com/Nike"><img src="https://img.icons8.com/material/2x/twitter-squared.png" ></a>
+        <a href="https://www.facebook.com/nike"><img src="https://cdn-icons.flaticon.com/png/512/3128/premium/3128208.png?token=exp=1642782321~hmac=b6c16c3c46cb17a94f8cd5d7277c914a" ></a> 
+        <a href="https://www.youtube.com/user/nike"><img src="https://img.icons8.com/material/2x/youtube--v1.png" ></a>
+        <a href="https://instagram.com/nike"><img src="https://img.icons8.com/windows/2x/instagram.png" ></a>
 
     </div>
 </div>
