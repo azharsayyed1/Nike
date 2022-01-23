@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Clothing</title>
     <script src="https://kit.fontawesome.com/683b4b40e3.js" crossorigin="anonymous"></script>
-    <link nes="" rel="icon" sizes="128x128" href="https://www.nike.com/android-icon-128x128.png">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/menshoes.css">
@@ -131,7 +130,7 @@
 
 <script src="../script/navbar.js"></script>
 
-<script>
+<script type="module">
 var data = [
    
 {
@@ -266,7 +265,7 @@ function showdata(data){
             };
             console.log(obj);
             localStorage.setItem("product",JSON.stringify(obj))
-            window.location.href = "product_show.html"
+            window.location.href = "product_showhtml"
         });
         var image = document.createElement("img");
         image.src = prodimage;
@@ -284,6 +283,36 @@ function showdata(data){
     })
 }
 
+function fiter_data(){
+        var selected = document.querySelector("#fitler_women_shoe_clothing").value;
+        if(selected === ""){
+            showdata(data);
+        }
+        else{
+            var filter = data.filter(({prodcat}) =>{
+                return (prodcat == selected);
+            });
+            showdata(filter);
+        }
+    }
+
+    function sort_data(){
+        var select = document.querySelector("#sort_women_shoe_clothing").value;
+  console.log(select)
+        setTimeout( function(){
+            if(select === "low"){
+                data.sort((a, b) => {
+                    return a.prodprice - b.prodprice;
+                })
+            }
+            if(select === "high"){
+                data.sort((a, b)=>{
+                    return b.prodprice - a.prodprice;
+                })
+            }
+            showdata(data)
+        }, 1000);
+    }
 
 
 
