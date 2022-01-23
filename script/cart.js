@@ -8,65 +8,71 @@ const displaycart = (temparr)=>{
   let subtotal = 0;
   
   let grandtotal = 0;
-
+  document.getElementById("cart-div").innerHTML = null;
  temparr.map((elem,index)=>{
   let cartdiv = document.createElement("div");
   cartdiv.setAttribute("class","cart-items");
 
   let imagediv = document.createElement("div");
   let imag = document.createElement("img");
-  imag.src = elem.image;
+  imag.src = elem.prodimg;
   imagediv.append(imag)
 
   let detailsdiv = document.createElement("div")
+
   let categ = document.createElement("p")
-  categ.innerHTML = elem.category
-  let remove = document.createElement("p")
+  categ.innerHTML = elem.prodcat
+
+  let title = document.createElement("p")
+  title.innerHTML = elem.prodtitle
+
+  let remove = document.createElement("button")
   remove.innerHTML = "Remove"
   remove.setAttribute = ("class","remove-button")
-  detailsdiv.append(categ,remove)
+  detailsdiv.append(title,categ,remove)
 
   remove.addEventListener("click", function(){
     removeitem(index)
+    
   })
  
 
   let pricediv = document.createElement("div")
   let price = document.createElement("p")
-  price.innerHTML = elem.price;
+  price.innerHTML = elem.prodprice;
   pricediv.append(price)
 
-
-  grandtotal+= elem.price+handling
+  grandtotal+= elem.prodprice+handling
   
-
-  grand(price,grandtotal)
+  grand(grandtotal)
 
   cartdiv.append(imagediv,detailsdiv,pricediv)
   
-
   document.getElementById("cart-div").append(cartdiv)
-
+  
  })
-
 }
-  const grand = (price,grandtotal) => {
-  console.log("grand",grandtotal) 
+var addedtotal = []
+  const grand = (grandtotal) => {
   document.getElementById("subtotal").textContent = grandtotal-handling
-  document.getElementById("grandtotal").textContent = grandtotal  
+  document.getElementById("grandtotal").textContent = grandtotal 
+  var obj = {
+    total : grandtotal
+  }
+  // displaycart(temparr);
+  addedtotal.push(obj)
+  localStorage.setItem("total",JSON.stringify(addedtotal));
+ 
   }
 
-
-displaycart (temparr)
-
+  displaycart (temparr)
 // this function is for removing items from the cart
 function removeitem(index){
- 
+//  console.log(temparr)
   temparr.splice(index,1)
-  
+  displaycart (temparr)  
   localStorage.setItem("cart",JSON.stringify(temparr))
-  displaycart (temparr)
-  location.reload()
-  // displaycart (temparr)
+
 }
 
+document.getElementById("checkoutbut").addEventListener("click", grand)

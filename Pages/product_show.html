@@ -150,8 +150,8 @@
         var addcart = document.createElement("button");
             addcart.textContent = "Add to cart";
             addcart.id = "product_show_add_to_cart_button";
-            addcart.addEventListener("click", function(event){
-                event.preventDefault();
+            addcart.addEventListener("click", function(){
+                // event.preventDefault();
                 var obj = {
                     prodtitle: titleprod,
                     prodcat: catprod,
@@ -161,7 +161,9 @@
                 }
                 cart_data.push(obj);
                 localStorage.setItem("cart", JSON.stringify(cart_data));
+                
             })
+          
 
         var wishlist = document.createElement("button");
             wishlist.textContent = "Favourite";
@@ -327,7 +329,7 @@
 
 
 
-    var men = document.getElementById("men_page_nav_bar").addEventListener("click",Menpage)
+ var men = document.getElementById("men_page_nav_bar").addEventListener("click",Menpage)
  function Menpage(){
      window.location.href = "men.html"
  }

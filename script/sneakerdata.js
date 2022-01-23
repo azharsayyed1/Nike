@@ -373,13 +373,7 @@ const upcomingProd = () => {
 var addedToCart = []
 
 function addCart(elem){
-  // var obj = {
-  //   prodimg:image,
-  //   prodcat:category,
-  //   prodptitle:name,
-  // };
 
-  // console.log(obj)
   addedToCart.push(elem);
   localStorage.setItem("cart",JSON.stringify(addedToCart));
   
