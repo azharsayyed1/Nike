@@ -39,7 +39,7 @@ const displaycart = (temparr)=>{
 
   let pricediv = document.createElement("div")
   let price = document.createElement("p")
-  price.innerHTML = elem.prodprice;
+  price.innerHTML = "₹ "+elem.prodprice;
   pricediv.append(price)
 
   grandtotal+= elem.prodprice+handling
@@ -54,8 +54,9 @@ const displaycart = (temparr)=>{
 }
 
   const grand = (grandtotal) => {
-  document.getElementById("subtotal").textContent = grandtotal-handling
-  document.getElementById("grandtotal").textContent = grandtotal 
+    var subtot = grandtotal-handling
+  document.getElementById("subtotal").textContent = "₹ "+subtot
+  document.getElementById("grandtotal").textContent = "₹ "+grandtotal 
   
     localStorage.setItem("totalamount",grandtotal)
   
