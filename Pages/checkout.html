@@ -1,41 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upcoming Products. Nike SNKRS IN</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link nes="" rel="icon" sizes="128x128" href="https://www.nike.com/android-icon-128x128.png">
+    <link rel="stylesheet" href="../style/checkout.css">
+    <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/navbar.css">
-  <link rel="stylesheet" href="../style/sneakers.css">
-  <link rel="stylesheet" href="../style/footer.css">
-  <script src="https://kit.fontawesome.com/683b4b40e3.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="./style/index.css"> -->
-  <style>
-    @media only screen and (min-width : 376px) and (max-width : 820px){
-   #feed-main{
-     grid-template-columns: repeat(2, 1fr);
-     grid-template-rows: auto;
-   }
-   #feed-main>img{
-     width: 200px;
-     height: 200px;
-   }
- }
- /* media query for phones and small size screens */
- @media only screen and (min-width : 0px) and (max-width : 414px){
-   #feed-main{
-     width: 95%;
-     margin: auto;
-     grid-template-columns: repeat(1, 1fr);
-     grid-template-rows: auto;
-   }
-  
- }
-</style>
-  </head>
-  <body onload="upcomingProd()">
+    <title>Nike.com Checkout</title>
+</head>
+<body>
     <!-- Navbar -->
     <div id="navbar_suraj">
         <div id="top">
@@ -53,7 +28,7 @@
              </div> 
              <div id="bottom">
                  <div class="left">
-                  <a href="../index.html"><svg class="pre-logo-svg" height="50px" width="65px" fill="#111" viewBox="0 0 69 32"><path d="M68.56 4L18.4 25.36Q12.16 28 7.92 28q-4.8 0-6.96-3.36-1.36-2.16-.8-5.48t2.96-7.08q2-3.04 6.56-8-1.6 2.56-2.24 5.28-1.2 5.12 2.16 7.52Q11.2 18 14 18q2.24 0 5.04-.72z"></path></svg></a> 
+                    <a href="../index.html"><svg class="pre-logo-svg" height="50px" width="65px" fill="#111" viewBox="0 0 69 32"><path d="M68.56 4L18.4 25.36Q12.16 28 7.92 28q-4.8 0-6.96-3.36-1.36-2.16-.8-5.48t2.96-7.08q2-3.04 6.56-8-1.6 2.56-2.24 5.28-1.2 5.12 2.16 7.52Q11.2 18 14 18q2.24 0 5.04-.72z"></path></svg></a> 
                   
                  </div>
                  <div id="center_phone">
@@ -80,14 +55,66 @@
              </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="top"></div>
-    <div id="feed-header">
-      <p onclick="FeedPage()" >Feed</p>
-      <p onclick="InStockPage()" >In-Stock </p>
-      <p onclick="UpcomingPage()"  >Upcoming</p>
+    <div id="checkot_main_container_div">
+        <div id="checkout_main_proccess_div">
+            <h1>1. DELIVERY DETAILS</h1>
+            <div id="checkout_adress_div">
+                <div id="checkout_name">
+                    <input type="text" placeholder="First Name" id="userfirstname">
+                    <input type="text" placeholder="Last Name" id="userlastname">
+                </div>
+                <input type="text" placeholder="Enter Address" id="useraddress">
+                <div id="checkout_email_phnnumber">
+                    <input type="email" placeholder="Email Id" id="useremail">
+                    <input type="number" placeholder="Phone Number" id="userphnnum">
+                </div>
+                <div id="checkout_add_details_button_div">
+                    <button id="checkout_add_details_button" onclick="addDetails()">Save & Countinue</button>
+                </div>
+            </div>
+            <h1>2. PAYMENT</h1>
+            <div id="checkout_payment_div">
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" id="cardnumber" placeholder="Card Number">
+                <div>
+                    <h3 id="expirydateheading">Expiry Date</h3>
+                    <input type="month" id="cardexpirydate" min="1" max="10">
+                    <input type="number" placeholder="CVV" id=cardcvv"" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3">
+                </div>
+                <div id="payment_button_div"><button id="main_payment_button" onclick="makepayment()">Make Payment</button></div>
+            </div>
+            <h1>3. ORDER REVIEW</h1>
+            <div id="checkout_order_status_div">
+                <div id="show_order_main_div">
+                    <h2>Name:- </h2>
+                    <p id="show_order_user_name"></p>
+                    <h2>Address:- </h2>
+                    <p id="show_order_user_address"></p>
+                    <h2>Total Amount:- </h2>
+                    <p id="show_order_user_total_amount"></p>
+                    <h2>Your Order has been placeholder</h2>
+                    <p id="you_will_recice_order_on"></p>
+                </div>
+                <div id="main_order_buttons_div"><button id="cancel_order" onclick="cancelorder()">Cancel Order</button><button id="countinue_shopping">Countinue Shopping</button></div>
+            </div>
+        </div>
+        <div id="checkout_main_amount_div">
+            <h1 id="">Total Amount</h1>
+            <div id="main_amount_show_div">
+                <div style="display: flex;">
+                    <h2>Amount:</h2>
+                    <h3 id="show_amount_to_pay"></h3>
+                </div>
+                <div style="display: flex;">
+                    <h2>GST tax (12%):</h2>
+                    <h3 id="show_tax_to_pay"></h3>
+                </div>
+                <div style="display: flex;">
+                    <h2>Total Amount:</h2>
+                    <h3 id="show_total_amount_to_pay"></h3>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="feed-main"></div>
 
     <!-- Footer -->
     <div id="futer_footer">
@@ -136,20 +163,9 @@
           </div>
       </div>
   </div>
-  </body>
+</body>
 </html>
 
 <script src="../script/navbar.js"></script>
 
-<script src="../script/sneakerdata.js"></script>
-<script>
-  var men = document.getElementById("men_page_nav_bar").addEventListener("click",Menpage)
- function Menpage(){
-     window.location.href = "men.html"
- }
-</script>
-
-<!-- <script type="module">
-  import navbar from "./components/navbar.js"
-  document.querySelector(".top").innerHTML=navbar()
-</script> -->
+<script src="../script/checkout.js"></script>
