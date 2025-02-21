@@ -1,0 +1,30 @@
+name: CICD for website 
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu:latest 
+
+  steps:
+    - name: checkout the repo 
+      uses: actions/checkout@v3 
+    
+    - name: setup nginx 
+      run: |
+           sudo apt update 
+           sudo apt install -y nginx 
+    
+    - name: start nginx 
+      run: sudo systemctl start nginx
+      
+    - name: deploy to a static website
+      run: |
+           sudo rm -rf /var/www/html/*
+           sudo cp -r * /var/www/html/*
+           sudo systemctl restart nginx 
+
+           
